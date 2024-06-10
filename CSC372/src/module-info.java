@@ -4,5 +4,5 @@
 /**
  * 
  */
-module CSC374 {
+module CSC372 {
 }
