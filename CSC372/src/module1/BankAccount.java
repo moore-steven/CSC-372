@@ -2,10 +2,10 @@ package module1;
 
 public class BankAccount {
 	// initialize fields
-	private String firstName;
-	private String lastName;
-	private int accountID;
-	private double balance;
+	protected String firstName;
+	protected String lastName;
+	protected int accountID;
+	protected double balance;
 	
 	// Constructor that sets balance to 0
 	public BankAccount() {
@@ -64,7 +64,7 @@ public class BankAccount {
 	public void accountSummary ( ) {
 		System.out.println("Account ID: " + accountID);
 		System.out.println("Account Owner: " + firstName + " " + lastName);
-		System.out.print("Current Balance is $");
+		System.out.print("Current Balance: $");
 		System.out.printf("%.2f", balance);
 		System.out.println();
 	}
