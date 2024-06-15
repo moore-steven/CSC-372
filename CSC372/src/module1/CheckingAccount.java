@@ -1,7 +1,15 @@
 package module1;
 
+// create CheckingAccount class that inherits from BankAccount
+
 public class CheckingAccount extends BankAccount {
+	
+	// initialize interest rate variable
+	
 	private double interestRate;
+	
+	// Method that processes a withdrawal from checking account; if result is
+	// negative balance then a 30 dollar fee is charged
 	
 	public void processWithdrawal (double dep) {
 		if (dep > balance) {
@@ -11,9 +19,16 @@ public class CheckingAccount extends BankAccount {
 		balance = balance - dep;
 		}
 	}
+	
+	//method to set interest
+	
 	public void setInterest (double interest) {
 		interestRate = interest;
 	}
+	
+	
+	// method to call inherited display account method and then display interest
+	// information that is unique to this subclass
 	
 	public void displayAccount() {
 		this.accountSummary();
