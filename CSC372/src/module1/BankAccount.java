@@ -12,6 +12,11 @@ public class BankAccount {
 		balance = 0;
 	}
 	
+	// Constructor that initializes with a value
+	public BankAccount(double bal) {
+		balance = bal;
+	}
+	
 	//method to enter deposit
 	public void deposit (double dep) {
 		balance = balance + dep;
