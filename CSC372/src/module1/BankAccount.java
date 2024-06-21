@@ -13,7 +13,7 @@ public class BankAccount {
 	}
 	
 	// Constructor that initializes with a value
-	public BankAccount(double bal) {
+	public void balance (double bal) {
 		balance = bal;
 	}
 	
@@ -59,10 +59,8 @@ public class BankAccount {
 	}
 	
 	//method to get balance
-	public void getBalance ( ) {
-		System.out.print("Account Balance is $");
-		System.out.printf("%.2f", balance);
-		System.out.println();
+	public double getBalance ( ) {
+		return balance;
 	}
 	
 	//method to print an account summary of all relevant data
