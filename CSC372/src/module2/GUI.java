@@ -184,7 +184,7 @@ public class GUI extends JFrame implements ActionListener {
 					account.deposit(value);
 					cbalanceField.setText(Double.toString(account.getBalance()));
 				} else {
-					JOptionPane.showMessageDialog(this, "Error! this value will overdraw account");
+					JOptionPane.showMessageDialog(this, "Error! This value will overdraw account");
 				}
 				
 			} else if (sourceEvent == withdraw) {
@@ -199,7 +199,7 @@ public class GUI extends JFrame implements ActionListener {
 					account.withdrawal(value);
 					cbalanceField.setText(Double.toString(account.getBalance()));
 				} else {
-					JOptionPane.showMessageDialog(this, "Error! this value will overdraw account");
+					JOptionPane.showMessageDialog(this, "Error! This value will overdraw account");
 				}
 
 			} else if (sourceEvent == quit ) {
