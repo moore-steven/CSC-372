@@ -20,7 +20,7 @@ public class Cone extends Shape {
 	}
 	
 	public String toString() {
-		return "Volume: " + volume() + " Surface Area: " + surface_area();
+		return "Cone Volume: " + volume() + " - Cone Surface Area: " + surface_area();
 	}
 
 }

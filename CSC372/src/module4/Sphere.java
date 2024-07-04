@@ -20,7 +20,7 @@ public class Sphere extends Shape {
 	}
 	
 	public String toString() {
-		return "Volume: " + volume() + " Surface Area: " + surface_area();
+		return "Sphere Volume: " + volume() + " - Sphere Surface Area: " + surface_area();
 	}
 
 }

@@ -20,7 +20,7 @@ public class Cylinder extends Shape {
 	}
 	
 	public String toString() {
-		return "Volume: " + volume() + " Surface Area: " + surface_area();
+		return "Cylinder Volume: " + volume() + " - Cylinder Surface Area: " + surface_area();
 	}
 
 }

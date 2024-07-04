@@ -17,7 +17,6 @@ public class ShapeArray {
 		ShapeArray.add(cone1);
 		
 		for (Shape shape : ShapeArray) {
-			 
 	         System.out.println(shape.toString());
 	      }
 
