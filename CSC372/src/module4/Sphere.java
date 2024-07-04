@@ -14,9 +14,13 @@ public class Sphere extends Shape {
 		return (4*Math.PI*Math.pow(radius, 2));
 	}
 
-	@Override
+	@Override	
 	double volume() {
 		return (4/3*Math.PI*Math.pow(radius, 3));
+	}
+	
+	public String toString() {
+		return "Volume: " + volume() + " Surface Area: " + surface_area();
 	}
 
 }
