@@ -3,9 +3,15 @@ package module5;
 import java.util.Scanner;
 
 public class ProductRecursion {
-	private static int[] input = new int[5];
-	public ProductRecursion() {
-		// TODO Auto-generated constructor stub
+	private static Integer[] input = new Integer[6];
+	
+	private static int ProductR(Integer [] array, int num) {
+		if (array[num] == null) {
+			return 1;
+		}
+			
+		return (array[num] * ProductR(array, (num + 1)));
+		
 	}
 
 	public static void main(String[] args) {
@@ -17,7 +23,13 @@ public class ProductRecursion {
 			input[i] = s.nextInt();
 		}
 		
-		System.out.println(input[1]);
+		input[5] = null;
+		int num = 0;
+		System.out.println("The Product of the numbers is: " + ProductR(input, num));
+		
 	}
+
+		
+	
 
 }
