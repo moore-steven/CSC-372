@@ -2,7 +2,10 @@ package module5;
 
 import java.util.Scanner;
 
-public class ProductRecursion {
+public class ProductRecursion { 
+	
+	// Creation of Integer array
+	
 	private static Integer[] input = new Integer[6];
 	
 	private static int ProductR(Integer [] array, int num) {
@@ -23,7 +26,7 @@ public class ProductRecursion {
 			input[i] = s.nextInt();
 		}
 		
-		input[5] = null;
+		input[(input.length - 1)] = null;
 		int num = 0;
 		System.out.println("The Product of the numbers is: " + ProductR(input, num));
 		
