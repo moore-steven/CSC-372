@@ -2,6 +2,7 @@ package module6;
 
 import java.util.ArrayList;
 
+// Selection sort class with two methods - one using Name Comparator and one using Roll Number Comparator
 
 public class SelectionSort  {
 	

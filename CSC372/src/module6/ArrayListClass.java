@@ -1,13 +1,14 @@
 package module6;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
 
 public class ArrayListClass {
 
 	
 	public static void main(String[] args) {
+		
+		// Create studentlist array list and fill with sample data.
+		
 		ArrayList<Student> studentlist = new ArrayList<> ();
 		
 		studentlist.add(new Student(1,"Bill","Water Street"));
@@ -21,6 +22,9 @@ public class ArrayListClass {
 		studentlist.add(new Student(9,"Corey","Upalika Street"));
 		studentlist.add(new Student(10,"Jaime","Pine Street"));
 		
+		
+		// Print out Original Student List to compare to list after sort
+		
 		System.out.println("Original Student List - ");
 		System.out.println();
 		for (int i=0; i < studentlist.size(); ++i) {
@@ -32,6 +36,9 @@ public class ArrayListClass {
 		System.out.println();
 		System.out.println("Sorted by Name - ");
 		System.out.println();
+		
+		// Call Selection Sort class sort method using Name Comparator and then print list for comparison
+		
 		SelectionSort.sort(studentlist, new NameComparator());
 		
 		for (int i=0; i < studentlist.size(); ++i) {
@@ -40,7 +47,7 @@ public class ArrayListClass {
 			System.out.println(" - " + studentlist.get(i).address);
 		}
 		
-		
+		// Call Selection Sort class sort method using Roll Number Comparator and then print list for comparison
 		System.out.println();
 		System.out.println("Sorted by Roll Number - ");
 		System.out.println();
