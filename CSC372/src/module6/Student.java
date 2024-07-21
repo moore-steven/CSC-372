@@ -12,8 +12,8 @@ public class Student {
 	}
 	
 	Student(int rollin, String namein, String addressin) {
-		rollno = rollin;
-		name = namein;
-		address = addressin;
+		this.rollno = rollin;
+		this.name = namein;
+		this.address = addressin;
 	}
 }

@@ -1,6 +1,8 @@
 package module6;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 
 public class ArrayListClass {
 
@@ -18,6 +20,41 @@ public class ArrayListClass {
 		studentlist.add(new Student(8,"Matt","Old 60 Lane"));
 		studentlist.add(new Student(9,"Corey","Upalika Street"));
 		studentlist.add(new Student(10,"Jaime","Pine Street"));
+		
+		System.out.println("Original Student List - ");
+		System.out.println();
+		for (int i=0; i < studentlist.size(); ++i) {
+			System.out.print(studentlist.get(i).rollno + " - ");
+			System.out.print(studentlist.get(i).name);
+			System.out.println(" - " + studentlist.get(i).address);
+		}
+		
+		System.out.println();
+		System.out.println("Sorted by Name - ");
+		System.out.println();
+		SelectionSort.sort(studentlist, new NameComparator());
+		
+		for (int i=0; i < studentlist.size(); ++i) {
+			System.out.print(studentlist.get(i).rollno + " - ");
+			System.out.print(studentlist.get(i).name);
+			System.out.println(" - " + studentlist.get(i).address);
+		}
+		
+		
+		System.out.println();
+		System.out.println("Sorted by Roll Number - ");
+		System.out.println();
+		SelectionSort.sort(studentlist, new RollNoComparator());
+		
+		for (int i=0; i < studentlist.size(); ++i) {
+			System.out.print(studentlist.get(i).rollno + " - ");
+			System.out.print(studentlist.get(i).name);
+			System.out.println(" - " + studentlist.get(i).address);
+		}
+		
+		System.out.println();
+		
+		
 
 	}
 
