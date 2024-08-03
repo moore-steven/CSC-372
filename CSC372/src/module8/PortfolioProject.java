@@ -2,7 +2,7 @@ package module8;
 
 import java.util.ArrayList;
 
-public class ArrayListClass {
+public class PortfolioProject {
 
 	
 	public static void main(String[] args) {
