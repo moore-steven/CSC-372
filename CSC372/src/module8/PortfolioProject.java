@@ -1,5 +1,7 @@
 package module8;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -49,13 +51,23 @@ public class PortfolioProject {
 		SelectionSort.sort(studentlist, new NameComparator());
 		
 		for (int i=0; i < studentlist.size(); ++i) {
-			System.out.print(studentlist.get(i).name);
-			System.out.println(" - " + studentlist.get(i).address);
-			System.out.println(" - " + studentlist.get(i).GPA);
+			System.out.println(studentlist.get(i).Export());
 		}
 		
-		
 		System.out.println();
+		
+		 try {
+		      FileWriter myWriter = new FileWriter("StudentList.txt");
+		      for (int j=0; j < studentlist.size(); ++j) {
+		    	  myWriter.write(studentlist.get(j).Export());
+		    	  myWriter.write(System.lineSeparator());
+		      }	      
+		      myWriter.close();
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
 		
 		
 

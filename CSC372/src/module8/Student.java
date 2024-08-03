@@ -3,9 +3,9 @@ package module8;
 // Student class to hold student information
 
 public class Student {
-	double GPA;
-	String name;
-	String address;
+	private double GPA;
+	private String name;
+	private String address;
 	
 	Student() {
 		name = "blank";
@@ -17,5 +17,15 @@ public class Student {
 		this.GPA = GPAin;
 		this.name = namein;
 		this.address = addressin;
+	}
+	
+	public String Export() {
+		String info = "Name: " + this.name + " - Address: " + this.address + " - GPA: " + this.GPA;
+		return info;
+		
+	}
+	
+	public String Getname() {
+		return this.name;
 	}
 }
