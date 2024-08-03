@@ -19,36 +19,33 @@ public class PortfolioProject {
 		String nameIn = "";
 		String addressIn = "";
 		double gpaIn = 0;
-		
-		
-		// loop that repeats until a zero value is entered for the student name.
-		
-		while (!"0".equals(nameIn)) {
-			Scanner userIn = new Scanner(System.in);
-			System.out.println("Enter Name of new student (Enter 0 to exit): ");
-			nameIn = userIn.nextLine();
-			if ("0".equals(nameIn)) {
-				break;
+		try (Scanner userIn = new Scanner(System.in)) {
+			// loop that repeats until a zero value is entered for the student name.
+			while (!"0".equals(nameIn)) {
+				System.out.println("Enter Name of new student (Enter 0 to exit): ");
+				nameIn = userIn.nextLine();
+				if ("0".equals(nameIn)) {
+					break;
+				}
+				System.out.println("Enter address of new student: ");
+				addressIn = userIn.nextLine();
+				System.out.println("Enter GPA of new student: ");
+				
+				// validation of double for input before accepting
+				
+				while (!userIn.hasNextDouble()) {
+					System.out.println("Invalid Number - Try Again");
+					userIn.next();
+				}
+				gpaIn = userIn.nextDouble();
+				
+				
+				// adds new values to student list
+				
+				studentlist.add(new Student(nameIn, addressIn, gpaIn));
+				userIn.nextLine();
 			}
-			System.out.println("Enter address of new student: ");
-			addressIn = userIn.nextLine();
-			System.out.println("Enter GPA of new student: ");
-			
-			// validation of double for input before accepting
-			
-			while (!userIn.hasNextDouble()) {
-				System.out.println("Invalid Number - Try Again");
-				userIn.next();
-			}
-			gpaIn = userIn.nextDouble();	
-			
-			// adds new values to student list
-			
-			studentlist.add(new Student(nameIn, addressIn, gpaIn));
 		}
-		
-
-		
 		
 		System.out.println();
 		System.out.println("Student List Sorted by Name - ");
