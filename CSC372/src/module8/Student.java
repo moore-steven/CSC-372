@@ -3,18 +3,18 @@ package module8;
 // Student class to hold student information
 
 public class Student {
-	int rollno;
+	double GPA;
 	String name;
 	String address;
 	
 	Student() {
-		rollno = 0;
 		name = "blank";
-		address = "blank";	
+		address = "blank";
+		GPA = 0;
 	}
 	
-	Student(int rollin, String namein, String addressin) {
-		this.rollno = rollin;
+	Student(String namein, String addressin, double GPAin) {
+		this.GPA = GPAin;
 		this.name = namein;
 		this.address = addressin;
 	}
