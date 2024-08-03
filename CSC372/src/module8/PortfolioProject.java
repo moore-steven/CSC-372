@@ -10,7 +10,7 @@ public class PortfolioProject {
 	
 	public static void main(String[] args) {
 		
-		// Create studentlist array list and fill with sample data.
+		// Create studentlist array list and input variables
 		
 		ArrayList<Student> studentlist = new ArrayList<> ();
 		
@@ -20,6 +20,8 @@ public class PortfolioProject {
 		String addressIn = "";
 		double gpaIn = 0;
 		
+		
+		// loop that repeats until a zero value is entered for the student name.
 		
 		while (!"0".equals(nameIn)) {
 			Scanner userIn = new Scanner(System.in);
@@ -31,11 +33,17 @@ public class PortfolioProject {
 			System.out.println("Enter address of new student: ");
 			addressIn = userIn.nextLine();
 			System.out.println("Enter GPA of new student: ");
+			
+			// validation of double for input before accepting
+			
 			while (!userIn.hasNextDouble()) {
 				System.out.println("Invalid Number - Try Again");
 				userIn.next();
 			}
 			gpaIn = userIn.nextDouble();	
+			
+			// adds new values to student list
+			
 			studentlist.add(new Student(nameIn, addressIn, gpaIn));
 		}
 		
@@ -46,7 +54,7 @@ public class PortfolioProject {
 		System.out.println("Student List Sorted by Name - ");
 		System.out.println();
 		
-		// Call Selection Sort class sort method using Name Comparator and then print list for comparison
+		// Call Selection Sort class sort method using Name Comparator and then prints final list
 		
 		SelectionSort.sort(studentlist, new NameComparator());
 		
@@ -55,6 +63,8 @@ public class PortfolioProject {
 		}
 		
 		System.out.println();
+		
+		// Outputs final list to text file, try-catch used to intercept I/O errors
 		
 		 try {
 		      FileWriter myWriter = new FileWriter("StudentList.txt");
