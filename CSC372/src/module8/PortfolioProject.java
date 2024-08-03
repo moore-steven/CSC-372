@@ -1,6 +1,7 @@
 package module8;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PortfolioProject {
 
@@ -11,30 +12,36 @@ public class PortfolioProject {
 		
 		ArrayList<Student> studentlist = new ArrayList<> ();
 		
-		studentlist.add(new Student(1,"Bill","Water Street"));
-		studentlist.add(new Student(2,"Penelope","Brink Street"));
-		studentlist.add(new Student(3,"Sarah","Fall Drive"));
-		studentlist.add(new Student(4,"Danny","Main Street"));
-		studentlist.add(new Student(5,"Christy","5th Street"));
-		studentlist.add(new Student(6,"Samuel","Wall Street"));
-		studentlist.add(new Student(7,"John","Park Avenue"));
-		studentlist.add(new Student(8,"Matt","Old 60 Lane"));
-		studentlist.add(new Student(9,"Corey","Upalika Street"));
-		studentlist.add(new Student(10,"Jaime","Pine Street"));
 		
 		
-		// Print out Original Student List to compare to list after sort
+		String nameIn = "";
+		String addressIn = "";
+		double gpaIn = 0;
 		
-		System.out.println("Original Student List - ");
-		System.out.println();
-		for (int i=0; i < studentlist.size(); ++i) {
-			System.out.print(studentlist.get(i).rollno + " - ");
-			System.out.print(studentlist.get(i).name);
-			System.out.println(" - " + studentlist.get(i).address);
+		
+		while (!"0".equals(nameIn)) {
+			Scanner userIn = new Scanner(System.in);
+			System.out.println("Enter Name of new student (Enter 0 to exit): ");
+			nameIn = userIn.nextLine();
+			if ("0".equals(nameIn)) {
+				break;
+			}
+			System.out.println("Enter address of new student: ");
+			addressIn = userIn.nextLine();
+			System.out.println("Enter GPA of new student: ");
+			while (!userIn.hasNextDouble()) {
+				System.out.println("Invalid Number - Try Again");
+				userIn.next();
+			}
+			gpaIn = userIn.nextDouble();	
+			studentlist.add(new Student(nameIn, addressIn, gpaIn));
 		}
 		
+
+		
+		
 		System.out.println();
-		System.out.println("Sorted by Name - ");
+		System.out.println("Student List Sorted by Name - ");
 		System.out.println();
 		
 		// Call Selection Sort class sort method using Name Comparator and then print list for comparison
@@ -42,18 +49,11 @@ public class PortfolioProject {
 		SelectionSort.sort(studentlist, new NameComparator());
 		
 		for (int i=0; i < studentlist.size(); ++i) {
-			System.out.print(studentlist.get(i).rollno + " - ");
 			System.out.print(studentlist.get(i).name);
 			System.out.println(" - " + studentlist.get(i).address);
+			System.out.println(" - " + studentlist.get(i).GPA);
 		}
 		
-
-		
-		for (int i=0; i < studentlist.size(); ++i) {
-			System.out.print(studentlist.get(i).rollno + " - ");
-			System.out.print(studentlist.get(i).name);
-			System.out.println(" - " + studentlist.get(i).address);
-		}
 		
 		System.out.println();
 		
