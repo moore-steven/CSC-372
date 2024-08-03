@@ -3,6 +3,9 @@ package module8;
 // Student class to hold student information
 
 public class Student {
+	
+	//updated class with private values to meet project requirements
+	
 	private double GPA;
 	private String name;
 	private String address;
